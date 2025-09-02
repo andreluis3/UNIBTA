@@ -1,0 +1,43 @@
+digraph DiagramaCasosUso {
+	rankdir=LR size=8
+	node [shape=rectangle style=rounded]
+	Sistema [label="Sistema de Monitoramento de Ruído"]
+	node [shape=ellipse style=solid]
+	Arduino [label="Arduino (Sensor)"]
+	App [label="Aplicativo (App)"]
+	Operador [label=Operador]
+	Gerente [label=Gerente]
+	Equipe [label="Equipe de Manutenção"]
+	Producao [label="Sistema de Produção"]
+	node [fillcolor=lightgrey shape=ellipse style=filled]
+	Monitorar [label="Monitorar Nível de Ruído"]
+	EnviarAlerta [label="Enviar Alerta"]
+	ExibirAlerta [label="Exibir Alerta"]
+	Login [label=Login]
+	Consultar [label="Consultar Máquinas"]
+	Relatar [label="Relatar Problema"]
+	Interromper [label="Interromper Linha de Produção"]
+	AcionarLED [label="Acionar LED Vermelho"]
+	Notificar [label="Notificar Equipe de Manutenção"]
+	Arduino -> Monitorar
+	Arduino -> EnviarAlerta
+	App -> ExibirAlerta
+	App -> Notificar
+	Operador -> Login
+	Operador -> ExibirAlerta
+	Operador -> Relatar
+	Gerente -> Login
+	Gerente -> Consultar
+	Equipe -> Notificar
+	Producao -> Interromper
+	Producao -> AcionarLED
+	Sistema -> Monitorar [style=dashed]
+	Sistema -> EnviarAlerta [style=dashed]
+	Sistema -> ExibirAlerta [style=dashed]
+	Sistema -> Login [style=dashed]
+	Sistema -> Consultar [style=dashed]
+	Sistema -> Relatar [style=dashed]
+	Sistema -> Interromper [style=dashed]
+	Sistema -> AcionarLED [style=dashed]
+	Sistema -> Notificar [style=dashed]
+}
